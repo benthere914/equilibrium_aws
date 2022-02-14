@@ -31,7 +31,7 @@ function App() {
 						<Demo />
 					</Route>
                     <Route path={'/logout'}>
-                        <LogOut/>
+                        <LogOut setUser={setUser}/>
                     </Route>
                     <Route path={'/delete-user'}>
                         <DeleteUser/>

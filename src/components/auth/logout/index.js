@@ -1,5 +1,19 @@
+import { Auth } from 'aws-amplify';
 import { Alert, Button } from 'react-bootstrap'
-const LogOut = () => {
+import { useHistory } from 'react-router'
+const LogOut = ({setUser}) => {
+    const history = useHistory();
+    const logOutHandler = async () => {
+        const res = await Auth.signOut();
+        setUser({email_verified: false});
+        history.push('/')
+        console.log(res)
+    }
+
+
+
+
+
     return (
     <>
         <div className='auth-form'>
@@ -9,8 +23,8 @@ const LogOut = () => {
                     Are you sure you want to log out?
                     You will not be able to comment or post any other content.
                 </p>
-                <Button variant='success'>Log Out</Button>{' '}
-                <Button variant='success'>Cancel</Button>
+                <Button variant='success' onClick={logOutHandler}>Log Out</Button>{' '}
+                <Button variant='success' onClick={() => {history.push('/')}}>Cancel</Button>
             </Alert>
         </div>
     </>
