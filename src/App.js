@@ -32,7 +32,7 @@ function App() {
 						<LogIn setUser={setUser}/>
 					</Route>
 					<Route path={'/demo'}>
-						<Demo />
+						<Demo setUser={setUser}/>
 					</Route>
                     <Route path={'/logout'}>
                         <LogOut setUser={setUser}/>
