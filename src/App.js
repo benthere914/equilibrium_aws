@@ -8,7 +8,6 @@ import SignUp from './components/auth/signup';
 import LogIn from './components/auth/login';
 import Demo from './components/auth/demo';
 import LogOut from './components/auth/logout';
-import DeleteUser from './components/auth/deleteUser';
 import { useEffect, useState } from 'react';
 Amplify.configure(awsconfig);
 
@@ -37,9 +36,7 @@ function App() {
                     <Route path={'/logout'}>
                         <LogOut setUser={setUser}/>
                     </Route>
-                    <Route path={'/delete-user'}>
-                        <DeleteUser/>
-                    </Route>
+
 				</Switch>
 			</BrowserRouter>
 		</>

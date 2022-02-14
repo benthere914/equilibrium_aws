@@ -11,7 +11,6 @@ const NavBar = ({user}) => {
 					<Nav className="me-auto">
                         {user?.email_verified?
                         <>
-                        <Nav.Link><h5 onClick={() => {history.push('/delete-user')}}>delete user</h5></Nav.Link>
                         <Nav.Link><h5 onClick={() => {history.push('/logout')}}>logout</h5></Nav.Link>
                         </>:
                         <>
