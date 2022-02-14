@@ -3,7 +3,6 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 const NavBar = ({user}) => {
     const history = useHistory();
-    console.log(user)
 	return (
 		<>
 			<Navbar bg="success" variant="dark">

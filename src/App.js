@@ -14,6 +14,7 @@ Amplify.configure(awsconfig);
 
 function App() {
     const [user, setUser] = useState('');
+
 	return (
 		<>
 			<BrowserRouter>
@@ -25,7 +26,7 @@ function App() {
 						<SignUp setUser={setUser}/>
 					</Route>
 					<Route path={'/login'}>
-						<LogIn />
+						<LogIn setUser={setUser}/>
 					</Route>
 					<Route path={'/demo'}>
 						<Demo />

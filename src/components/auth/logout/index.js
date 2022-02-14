@@ -7,7 +7,6 @@ const LogOut = ({setUser}) => {
         const res = await Auth.signOut();
         setUser({email_verified: false});
         history.push('/')
-        console.log(res)
     }
 
 
