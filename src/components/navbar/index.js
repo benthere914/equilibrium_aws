@@ -12,6 +12,8 @@ const NavBar = () => {
 						<Nav.Link><h5 onClick={() => {history.push('/signup')}}>Sign Up</h5></Nav.Link>
                         <Nav.Link><h5 onClick={() => {history.push('/login')}}>Log In</h5></Nav.Link>
                         <Nav.Link><h5 onClick={() => {history.push('/demo')}}>Demo</h5></Nav.Link>
+                        <Nav.Link><h5 onClick={() => {history.push('/logout')}}>logout</h5></Nav.Link>
+                        <Nav.Link><h5 onClick={() => {history.push('/delete-user')}}>delete user</h5></Nav.Link>
 					</Nav>
 				</Container>
 			</Navbar>
