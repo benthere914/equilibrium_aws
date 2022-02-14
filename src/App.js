@@ -2,19 +2,22 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './components/navbar';
-import Amplify from 'aws-amplify';
+import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import SignUp from './components/auth/signup';
 import LogIn from './components/auth/login';
 import Demo from './components/auth/demo';
 import LogOut from './components/auth/logout';
 import DeleteUser from './components/auth/deleteUser';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 Amplify.configure(awsconfig);
 
 function App() {
     const [user, setUser] = useState('');
-
+    useEffect(async () => {
+        const res = await Auth.currentAuthenticatedUser();
+        setUser(res.attributes)
+    }, [])
 	return (
 		<>
 			<BrowserRouter>
